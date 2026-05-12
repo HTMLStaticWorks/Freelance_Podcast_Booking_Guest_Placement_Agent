@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Get Your Podcast Strategy Call</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { colors: { primary: '#8b5cf6', secondary: '#ec4899', darkBg: '#0f172a' } } }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-slate-50 dark:bg-darkBg">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 nav-blur border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex items-center space-x-3 group">
+                        <img src="../podlink_logo_icon_1778567690962.png" alt="PodLink Logo" class="w-10 h-10 object-contain group-hover:scale-110 transition-transform">
+                        <span class="text-2xl font-bold gradient-text">PodLink</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Nav -->
+                <div class="hidden lg:flex items-center space-x-6 rtl:space-x-reverse">
+                    <a href="../index.html" class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">Home 1</a>
+                    <a href="home2.html" class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">Home 2</a>
+                    <a href="about.html" class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">About</a>
+                    <a href="services.html" class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">Services</a>
+                    <a href="case-studies.html" class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">Case Studies</a>
+                    <a href="blog.html" class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">Blog</a>
+                    <a href="dashboard.html" class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">Dashboard</a>
+                    <a href="login.html" class="px-6 py-2 bg-primary text-white rounded-full hover:bg-opacity-90 transition-all shadow-lg shadow-primary/20">Login</a>
+                </div>
+
+                <!-- Utilities -->
+                <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                    <button id="themeToggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+                        <i class="fas fa-moon text-slate-600 dark:text-slate-300"></i>
+                    </button>
+                    <button id="rtlToggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-sm font-bold">
+                        RTL
+                    </button>
+                    <button id="mobileMenuBtn" class="lg:hidden p-2">
+                        <i class="fas fa-bars text-2xl text-slate-600 dark:text-slate-300"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white dark:bg-darkBg border-b border-white/10 px-4 py-6 space-y-4 shadow-xl">
+            <a href="../index.html" class="block text-slate-600 dark:text-slate-300">Home 1</a>
+            <a href="home2.html" class="block text-slate-600 dark:text-slate-300">Home 2</a>
+            <a href="about.html" class="block text-slate-600 dark:text-slate-300">About</a>
+            <a href="services.html" class="block text-slate-600 dark:text-slate-300">Services</a>
+            <a href="dashboard.html" class="block text-slate-600 dark:text-slate-300">Dashboard</a>
+            <a href="login.html" class="block text-primary font-semibold">Login</a>
+            <a href="signup.html" class="block px-4 py-2 bg-primary text-white rounded-lg text-center">Sign Up</a>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <header class="relative pt-40 pb-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="../contact_hero_bg_1778571050000_1778571661455.png" alt="Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-slate-50/50 dark:bg-darkBg/50"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 text-center reveal relative z-10">
+            <h1 class="text-5xl md:text-7xl font-black mb-6">Let's <span class="gradient-text">Connect</span></h1>
+            <p class="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">Ready to amplify your voice? Book a consultation today.</p>
+        </div>
+    </header>
+
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16">
+            <!-- Contact Form -->
+            <div class="glass-card p-10 rounded-[2.5rem] reveal">
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Full Name</label>
+                            <input type="text" placeholder="John Doe" class="w-full px-5 py-4 bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl focus:outline-none focus:border-primary transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Email Address</label>
+                            <input type="email" placeholder="john@example.com" class="w-full px-5 py-4 bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl focus:outline-none focus:border-primary transition-colors">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Podcast Niche</label>
+                        <select class="w-full px-5 py-4 bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl focus:outline-none">
+                            <option>Business & Finance</option>
+                            <option>Technology</option>
+                            <option>Health & Wellness</option>
+                            <option>Entrepreneurship</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Your Goals</label>
+                        <textarea placeholder="Tell us what you want to achieve..." class="w-full px-5 py-4 bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl focus:outline-none focus:border-primary transition-colors h-32"></textarea>
+                    </div>
+                    <button class="w-full py-5 bg-primary text-white rounded-2xl font-bold shadow-xl shadow-primary/30 hover:scale-[1.02] transition-transform">Request Consultation</button>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="reveal delay-200 flex flex-col justify-center">
+                <div class="space-y-12">
+                    <div class="flex items-start space-x-6">
+                        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-calendar-check text-2xl text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Book a Strategy Call</h4>
+                            <p class="text-slate-500 text-sm mb-4">Skip the form and pick a time that works for you on our calendar.</p>
+                            <button class="text-primary font-bold hover:underline">Open Scheduler →</button>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-6">
+                        <div class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-envelope text-2xl text-secondary"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Direct Inquiry</h4>
+                            <p class="text-slate-500 text-sm mb-1">Email us for general questions:</p>
+                            <p class="font-bold">hello@podlink.agency</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-6">
+                        <div class="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fab fa-linkedin text-2xl text-blue-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Connect on LinkedIn</h4>
+                            <p class="text-slate-500 text-sm mb-4">Join our community of 10,000+ podcast creators and experts.</p>
+                            <button class="text-blue-500 font-bold hover:underline">Follow PodLink →</button>
+                        </div>
+                    </div>
+                    <!-- Social Follow -->
+                    <div class="pt-8 border-t border-slate-200 dark:border-white/5">
+                        <p class="text-xs font-bold text-slate-400 uppercase mb-6">Follow our journey</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/10 rounded-xl flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110 shadow-sm"><i class="fab fa-twitter text-lg"></i></a>
+                            <a href="#" class="w-12 h-12 bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/10 rounded-xl flex items-center justify-center hover:bg-secondary hover:text-white transition-all duration-300 hover:scale-110 shadow-sm"><i class="fab fa-instagram text-lg"></i></a>
+                            <a href="#" class="w-12 h-12 bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/10 rounded-xl flex items-center justify-center hover:bg-red-500 hover:text-white transition-all duration-300 hover:scale-110 shadow-sm"><i class="fab fa-youtube text-lg"></i></a>
+                            <a href="#" class="w-12 h-12 bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/10 rounded-xl flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300 hover:scale-110 shadow-sm"><i class="fab fa-tiktok text-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Map -->
+    <section class="reveal">
+        <div class="w-full h-[450px] grayscale hover:grayscale-0 transition-all duration-700 overflow-hidden relative">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937611493!2d-73.98731968459391!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1652355444654!5m2!1sen!2sus" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="absolute inset-0 pointer-events-none border-t border-b border-white/10 shadow-inner"></div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-50 dark:bg-slate-900 border-t border-white/10 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+                <div class="lg:col-span-2">
+                    <a href="../index.html" class="flex items-center space-x-3 mb-6 group">
+                        <img src="../podlink_logo_icon_1778567690962.png" alt="PodLink Logo" class="w-8 h-8 object-contain group-hover:rotate-12 transition-transform">
+                        <span class="text-3xl font-bold gradient-text">PodLink</span>
+                    </a>
+                    <p class="text-slate-500 max-w-sm mb-8">
+                        The world's leading podcast guest placement agency. We help visionaries, entrepreneurs, and experts amplify their voice through strategic podcast networking.
+                    </p>
+                    <div class="flex space-x-4 rtl:space-x-reverse">
+                        <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full footer-social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full footer-social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Resources</h4>
+                    <ul class="space-y-4 text-slate-500 text-sm">
+                        <li><a href="database.html" class="hover:text-primary transition-colors">Podcast Database</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Media Kit Guide</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Guest Checklist</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-slate-500 text-sm">
+                        <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Services</a></li>
+                        <li><a href="case-studies.html" class="hover:text-primary transition-colors">Case Studies</a></li>
+                        <li><a href="blog.html" class="hover:text-primary transition-colors">Insights Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Stay Updated</h4>
+                    <p class="text-xs text-slate-500 mb-4">Get the latest podcast strategy insights delivered to your inbox.</p>
+                    <form class="footer-newsletter flex gap-2">
+                        <input type="email" placeholder="Your email" class="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm focus:outline-none focus:border-primary">
+                        <button class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-secondary transition-colors"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+                <p>© 2026 PodLink Agency. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-primary">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <div id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

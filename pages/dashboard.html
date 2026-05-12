@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | PodLink Client Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { colors: { primary: '#8b5cf6', secondary: '#ec4899', darkBg: '#0f172a' } } }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-slate-50 dark:bg-darkBg min-h-screen">
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed left-0 top-0 h-full w-72 bg-white dark:bg-slate-900 border-r border-white/10 z-50 sidebar-transition sidebar-hidden lg:translate-x-0">
+        <div class="p-8">
+            <a href="../index.html" class="flex items-center space-x-3 group">
+                <img src="../podlink_logo_icon_1778567690962.png" alt="PodLink Logo" class="w-10 h-10 object-contain group-hover:scale-110 transition-transform">
+                <span class="text-2xl font-bold gradient-text">PodLink</span>
+            </a>
+        </div>
+        <nav id="sidebarNav" class="mt-8 px-4 space-y-2">
+            <a href="#" data-section="overview" class="flex items-center space-x-3 rtl:space-x-reverse p-4 bg-primary text-white rounded-2xl transition-all duration-300">
+                <i class="fas fa-home"></i> <span>Overview</span>
+            </a>
+            <a href="#" data-section="matches" class="flex items-center space-x-3 rtl:space-x-reverse p-4 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-2xl transition-all duration-300">
+                <i class="fas fa-microphone"></i> <span>Podcast Matches</span>
+            </a>
+            <a href="#" data-section="outreach" class="flex items-center space-x-3 rtl:space-x-reverse p-4 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-2xl transition-all duration-300">
+                <i class="fas fa-paper-plane"></i> <span>Outreach Tracker</span>
+            </a>
+            <a href="#" data-section="episodes" class="flex items-center space-x-3 rtl:space-x-reverse p-4 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-2xl transition-all duration-300">
+                <i class="fas fa-calendar-check"></i> <span>Booked Episodes</span>
+            </a>
+            <a href="#" data-section="analytics" class="flex items-center space-x-3 rtl:space-x-reverse p-4 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-2xl transition-all duration-300">
+                <i class="fas fa-chart-bar"></i> <span>Analytics</span>
+            </a>
+            <a href="#" data-section="calendar" class="flex items-center space-x-3 rtl:space-x-reverse p-4 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-2xl transition-all duration-300">
+                <i class="fas fa-calendar-alt"></i> <span>Publicity Calendar</span>
+            </a>
+            <a href="#" data-section="settings" class="flex items-center space-x-3 rtl:space-x-reverse p-4 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-2xl transition-all duration-300">
+                <i class="fas fa-cog"></i> <span>Settings</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="lg:ml-72 min-h-screen transition-all">
+        <!-- Top Bar -->
+        <header class="h-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-white/10 flex items-center justify-between px-8 sticky top-0 z-40">
+            <div class="flex items-center space-x-4">
+                <button id="sidebarToggle" class="lg:hidden p-2 text-2xl"><i class="fas fa-bars"></i></button>
+                <h2 class="text-xl font-bold">Welcome back, Alex!</h2>
+            </div>
+            <div class="flex items-center space-x-6 rtl:space-x-reverse">
+                <div class="hidden md:flex items-center space-x-2 rtl:space-x-reverse text-xs font-bold px-3 py-1 bg-green-500/10 text-green-500 rounded-full">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    <span>System Active</span>
+                </div>
+                <button id="dashboardRtlToggle" class="p-2 hover:text-primary transition-colors font-bold text-sm">RTL</button>
+                <button id="themeToggle" class="p-2"><i class="fas fa-moon"></i></button>
+                <img src="../professional_consultant_1778566228142.png" alt="User" class="w-10 h-10 rounded-full border-2 border-primary">
+            </div>
+        </header>
+
+        <div class="p-8">
+            <!-- Sections Wrapper -->
+            <div id="sectionsContainer">
+                
+                <!-- Overview Section -->
+                <section id="overviewSection" class="dashboard-section active">
+            <!-- Analytics Overview -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="glass-card p-6 rounded-3xl">
+                    <p class="text-xs text-slate-500 uppercase mb-2">Total Bookings</p>
+                    <h4 class="text-3xl font-black">24</h4>
+                    <p class="text-xs text-green-500 mt-2"><i class="fas fa-arrow-up"></i> +12% this month</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl">
+                    <p class="text-xs text-slate-500 uppercase mb-2">Success Rate</p>
+                    <h4 class="text-3xl font-black">92%</h4>
+                    <p class="text-xs text-primary mt-2">High Performance</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl">
+                    <p class="text-xs text-slate-500 uppercase mb-2">Audience Reach</p>
+                    <h4 class="text-3xl font-black">1.4M</h4>
+                    <p class="text-xs text-secondary mt-2"><i class="fas fa-users"></i> Global Impact</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl">
+                    <p class="text-xs text-slate-500 uppercase mb-2">Downloads</p>
+                    <h4 class="text-3xl font-black">450k</h4>
+                    <p class="text-xs text-blue-500 mt-2">Generated Leads</p>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Outreach Pipeline -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- Podcast Match Recommendations -->
+                    <div class="glass-card p-8 rounded-3xl">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-xl font-bold">Recommended Matches</h3>
+                            <a href="#" class="text-xs text-primary font-bold">View All</a>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-white/5">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center font-bold text-primary">T</div>
+                                    <div>
+                                        <p class="font-bold text-sm">The AI Revolution</p>
+                                        <p class="text-xs text-slate-500">Business • 250k Reach</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <span class="text-xs font-bold text-green-500">98% Match</span>
+                                    <button class="px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg">Pitch</button>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-white/5">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center font-bold text-secondary">F</div>
+                                    <div>
+                                        <p class="font-bold text-sm">Future of Work</p>
+                                        <p class="text-xs text-slate-500">Tech • 120k Reach</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <span class="text-xs font-bold text-green-500">92% Match</span>
+                                    <button class="px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg">Pitch</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Analytics Graph Preview -->
+                    <div class="glass-card p-8 rounded-3xl">
+                        <h3 class="text-xl font-bold mb-6">Audience Growth</h3>
+                        <img src="../analytics_dashboard_ui_1778566212161.png" alt="Chart" class="w-full rounded-2xl">
+                    </div>
+                </div>
+
+                <!-- Sidebar Content -->
+                <div class="space-y-8">
+                    <!-- Upcoming interviews -->
+                    <div class="glass-card p-8 rounded-3xl">
+                        <h3 class="text-xl font-bold mb-6">Upcoming Interviews</h3>
+                        <div class="space-y-6">
+                            <div class="flex space-x-4">
+                                <div class="text-center bg-slate-100 dark:bg-slate-800 p-2 rounded-xl min-w-[60px]">
+                                    <p class="text-xs font-bold text-slate-500 uppercase">May</p>
+                                    <p class="text-xl font-black">15</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-sm">Beyond the Code</p>
+                                    <p class="text-xs text-slate-500">10:00 AM EST • Recording</p>
+                                </div>
+                            </div>
+                            <div class="flex space-x-4">
+                                <div class="text-center bg-slate-100 dark:bg-slate-800 p-2 rounded-xl min-w-[60px]">
+                                    <p class="text-xs font-bold text-slate-500 uppercase">May</p>
+                                    <p class="text-xl font-black">22</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-sm">Mindful Leadership</p>
+                                    <p class="text-xs text-slate-500">2:30 PM EST • Live Show</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="w-full mt-8 py-3 border border-slate-200 dark:border-white/10 rounded-xl text-sm font-bold hover:bg-slate-50 dark:hover:bg-white/5 transition-all">View Calendar</button>
+                    </div>
+
+                    <!-- Pitch Submission Quick Form -->
+                    <div class="glass-card p-8 rounded-3xl bg-gradient-to-br from-primary/10 to-secondary/10">
+                        <h3 class="text-xl font-bold mb-4">Quick Pitch</h3>
+                        <p class="text-xs text-slate-500 mb-6">Have a new topic idea? Submit it to our strategy team.</p>
+                        <input type="text" placeholder="Topic Title" class="w-full mb-4 px-4 py-3 bg-white/50 dark:bg-slate-900/50 border border-white/10 rounded-xl focus:outline-none text-sm">
+                        <textarea placeholder="Brief Outline..." class="w-full mb-6 px-4 py-3 bg-white/50 dark:bg-slate-900/50 border border-white/10 rounded-xl focus:outline-none text-sm h-24"></textarea>
+                        <button class="w-full py-3 bg-slate-900 dark:bg-white dark:text-slate-900 text-white rounded-xl font-bold text-sm">Submit Idea</button>
+                    </div>
+                </div>
+                </section>
+
+                <!-- Podcast Matches Section -->
+                <section id="matchesSection" class="dashboard-section hidden">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold">New Opportunities</h3>
+                        <div class="flex space-x-2">
+                            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold">12 New Matches</span>
+                        </div>
+                    </div>
+                    <div class="grid gap-4">
+                        <div class="glass-card p-6 rounded-3xl flex flex-wrap md:flex-nowrap items-center justify-between gap-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-500 font-bold text-xl">M</div>
+                                <div>
+                                    <h4 class="font-bold">Marketing Mastery</h4>
+                                    <p class="text-xs text-slate-500">Entrepreneurship • 500k Monthly Listeners</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-8">
+                                <div class="text-center">
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold">Match Score</p>
+                                    <p class="text-green-500 font-bold">98%</p>
+                                </div>
+                                <button class="px-6 py-2 bg-primary text-white rounded-full text-sm font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Request Pitch</button>
+                            </div>
+                        </div>
+                        <div class="glass-card p-6 rounded-3xl flex flex-wrap md:flex-nowrap items-center justify-between gap-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary font-bold text-xl">S</div>
+                                <div>
+                                    <h4 class="font-bold">SaaS Secrets</h4>
+                                    <p class="text-xs text-slate-500">Tech • 120k Monthly Listeners</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-8">
+                                <div class="text-center">
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold">Match Score</p>
+                                    <p class="text-green-500 font-bold">94%</p>
+                                </div>
+                                <button class="px-6 py-2 bg-primary text-white rounded-full text-sm font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Request Pitch</button>
+                            </div>
+                        </div>
+                        <div class="glass-card p-6 rounded-3xl flex flex-wrap md:flex-nowrap items-center justify-between gap-4 opacity-75">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-14 h-14 bg-orange-500/10 rounded-2xl flex items-center justify-center text-orange-500 font-bold text-xl">G</div>
+                                <div>
+                                    <h4 class="font-bold">Growth Mindset</h4>
+                                    <p class="text-xs text-slate-500">Lifestyle • 80k Monthly Listeners</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-8">
+                                <div class="text-center">
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold">Match Score</p>
+                                    <p class="text-orange-500 font-bold">82%</p>
+                                </div>
+                                <button class="px-6 py-2 border border-slate-200 dark:border-white/10 rounded-full text-sm font-bold">Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Outreach Tracker Section -->
+                <section id="outreachSection" class="dashboard-section hidden">
+                    <h3 class="text-2xl font-bold mb-6">Active Outreach</h3>
+                    <div class="glass-card rounded-3xl overflow-hidden border border-white/5">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-50 dark:bg-slate-800/50">
+                                    <th class="p-4 text-xs font-bold text-slate-400 uppercase">Podcast</th>
+                                    <th class="p-4 text-xs font-bold text-slate-400 uppercase">Status</th>
+                                    <th class="p-4 text-xs font-bold text-slate-400 uppercase">Last Update</th>
+                                    <th class="p-4 text-xs font-bold text-slate-400 uppercase">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-white/5">
+                                <tr>
+                                    <td class="p-4">
+                                        <p class="font-bold text-sm">Tech Talk Daily</p>
+                                        <p class="text-[10px] text-slate-500">Host: Sarah Chen</p>
+                                    </td>
+                                    <td class="p-4">
+                                        <span class="px-3 py-1 bg-blue-500/10 text-blue-500 rounded-full text-[10px] font-bold uppercase">Pitched</span>
+                                    </td>
+                                    <td class="p-4 text-xs text-slate-500">2 days ago</td>
+                                    <td class="p-4"><button class="text-primary hover:underline text-xs">View Thread</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4">
+                                        <p class="font-bold text-sm">The Founder's Journey</p>
+                                        <p class="text-[10px] text-slate-500">Host: Mike Ross</p>
+                                    </td>
+                                    <td class="p-4">
+                                        <span class="px-3 py-1 bg-green-500/10 text-green-500 rounded-full text-[10px] font-bold uppercase">Accepted</span>
+                                    </td>
+                                    <td class="p-4 text-xs text-slate-500">Just now</td>
+                                    <td class="p-4"><button class="text-primary hover:underline text-xs">Schedule</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4">
+                                        <p class="font-bold text-sm">Future Pulse</p>
+                                        <p class="text-[10px] text-slate-500">Host: David Kim</p>
+                                    </td>
+                                    <td class="p-4">
+                                        <span class="px-3 py-1 bg-yellow-500/10 text-yellow-500 rounded-full text-[10px] font-bold uppercase">Reviewing</span>
+                                    </td>
+                                    <td class="p-4 text-xs text-slate-500">4 days ago</td>
+                                    <td class="p-4"><button class="text-primary hover:underline text-xs">Send Info</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Booked Episodes Section -->
+                <section id="episodesSection" class="dashboard-section hidden">
+                    <h3 class="text-2xl font-bold mb-6">Upcoming Recordings</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="glass-card p-6 rounded-3xl border-l-4 border-l-primary">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="px-3 py-1 bg-primary text-white rounded-lg text-xs font-bold">Tomorrow</div>
+                                <button class="text-slate-400 hover:text-primary"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">The AI Revolution</h4>
+                            <p class="text-xs text-slate-500 mb-4"><i class="fas fa-clock mr-2"></i> 10:00 AM - 11:30 AM EST</p>
+                            <div class="flex items-center space-x-3 pt-4 border-t border-white/5">
+                                <img src="../professional_consultant_1778566228142.png" class="w-8 h-8 rounded-full">
+                                <div>
+                                    <p class="text-xs font-bold">Host: James Wilson</p>
+                                    <p class="text-[10px] text-slate-500">Interview prep file ready</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card p-6 rounded-3xl border-l-4 border-l-secondary">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="px-3 py-1 bg-secondary text-white rounded-lg text-xs font-bold">May 22</div>
+                                <button class="text-slate-400 hover:text-primary"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">Mindful Leadership</h4>
+                            <p class="text-xs text-slate-500 mb-4"><i class="fas fa-clock mr-2"></i> 02:30 PM - 03:30 PM EST</p>
+                            <div class="flex items-center space-x-3 pt-4 border-t border-white/5">
+                                <div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-[10px] font-bold">AL</div>
+                                <div>
+                                    <p class="text-xs font-bold">Host: Anna Lee</p>
+                                    <p class="text-[10px] text-slate-500">Awaiting interview brief</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Analytics Section -->
+                <section id="analyticsSection" class="dashboard-section hidden">
+                    <h3 class="text-2xl font-bold mb-6">Performance Deep Dive</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="glass-card p-8 rounded-3xl h-80 flex flex-col items-center justify-center text-center">
+                            <div class="w-full h-40 bg-slate-100 dark:bg-slate-800 rounded-2xl mb-6 relative overflow-hidden">
+                                <!-- Fake Chart -->
+                                <div class="absolute bottom-0 left-0 w-full h-full flex items-end px-4 space-x-2">
+                                    <div class="w-full bg-primary/20 h-[30%] rounded-t-lg"></div>
+                                    <div class="w-full bg-primary/30 h-[50%] rounded-t-lg"></div>
+                                    <div class="w-full bg-primary/40 h-[40%] rounded-t-lg"></div>
+                                    <div class="w-full bg-primary/50 h-[70%] rounded-t-lg"></div>
+                                    <div class="w-full bg-primary/60 h-[60%] rounded-t-lg"></div>
+                                    <div class="w-full bg-primary h-[90%] rounded-t-lg"></div>
+                                </div>
+                            </div>
+                            <h4 class="font-bold mb-2">Listener Growth</h4>
+                            <p class="text-sm text-slate-500">Your reach has increased by 45% this quarter.</p>
+                        </div>
+                        <div class="glass-card p-8 rounded-3xl h-80 flex flex-col items-center justify-center text-center">
+                            <div class="w-40 h-40 rounded-full border-8 border-slate-100 dark:border-slate-800 border-t-secondary relative flex items-center justify-center mb-6">
+                                <span class="text-2xl font-bold text-secondary">68%</span>
+                            </div>
+                            <h4 class="font-bold mb-2">Booking Conversion</h4>
+                            <p class="text-sm text-slate-500">Efficiency of pitches leading to confirmed bookings.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Calendar Section -->
+                <section id="calendarSection" class="dashboard-section hidden">
+                    <h3 class="text-2xl font-bold mb-6">Publicity Calendar</h3>
+                    <div class="glass-card p-8 rounded-3xl">
+                        <div class="flex justify-between items-center mb-8">
+                            <h4 class="font-bold">Episodes Going Live</h4>
+                            <div class="flex space-x-2">
+                                <button class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs"><i class="fas fa-chevron-left"></i></button>
+                                <button class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center p-4 bg-white/5 rounded-2xl">
+                                <div class="w-12 text-center mr-4">
+                                    <p class="text-xs text-slate-400 font-bold uppercase">Jun</p>
+                                    <p class="text-lg font-black">02</p>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm">Startup Stories</p>
+                                    <p class="text-xs text-slate-500">Placement: Main Interview</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="px-2 py-1 bg-green-500/10 text-green-500 rounded text-[10px] font-bold uppercase">Scheduled</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-4 bg-white/5 rounded-2xl">
+                                <div class="w-12 text-center mr-4">
+                                    <p class="text-xs text-slate-400 font-bold uppercase">Jun</p>
+                                    <p class="text-lg font-black">15</p>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold text-sm">Beyond The Horizon</p>
+                                    <p class="text-xs text-slate-500">Placement: Feature Guest</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="px-2 py-1 bg-green-500/10 text-green-500 rounded text-[10px] font-bold uppercase">Scheduled</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Settings Placeholder -->
+                <section id="settingsSection" class="dashboard-section hidden">
+                    <h3 class="text-2xl font-bold mb-6">Account Settings</h3>
+                    <div class="glass-card p-8 rounded-3xl max-w-2xl">
+                        <form class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-bold mb-2">Full Name</label>
+                                <input type="text" value="Alex Johnson" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-white/10 focus:border-primary outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold mb-2">Email Address</label>
+                                <input type="email" value="alex@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-white/10 focus:border-primary outline-none">
+                            </div>
+                            <button class="px-8 py-3 bg-primary text-white rounded-xl font-bold shadow-lg shadow-primary/20">Save Changes</button>
+                        </form>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Back to Top -->
+    <div id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Sidebar Section Switching
+        const sidebarLinks = document.querySelectorAll('#sidebarNav a');
+        const sections = document.querySelectorAll('.dashboard-section');
+
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetSection = link.getAttribute('data-section');
+
+                // Update Sidebar Active State
+                sidebarLinks.forEach(l => {
+                    l.classList.remove('bg-primary', 'text-white');
+                    l.classList.add('text-slate-500', 'hover:bg-slate-100', 'dark:hover:bg-slate-800');
+                });
+                link.classList.add('bg-primary', 'text-white');
+                link.classList.remove('text-slate-500', 'hover:bg-slate-100', 'dark:hover:bg-slate-800');
+
+                // Switch Sections with fade
+                sections.forEach(s => {
+                    s.classList.add('hidden');
+                    s.classList.remove('active');
+                });
+                const activeSection = document.getElementById(`${targetSection}Section`);
+                activeSection.classList.remove('hidden');
+                setTimeout(() => activeSection.classList.add('active'), 50);
+
+                // Close mobile sidebar if open
+                if (window.innerWidth < 1024) {
+                    document.getElementById('sidebar').classList.add('-translate-x-full');
+                }
+            });
+        });
+
+        // Dashboard RTL Toggle
+        const rtlBtn = document.getElementById('dashboardRtlToggle');
+        const html = document.documentElement;
+
+        rtlBtn.addEventListener('click', () => {
+            const isRtl = html.getAttribute('dir') === 'rtl';
+            html.setAttribute('dir', isRtl ? 'ltr' : 'rtl');
+            
+            // Mirror Sidebar
+            const sidebar = document.getElementById('sidebar');
+            if (!isRtl) {
+                sidebar.classList.remove('left-0', 'border-r');
+                sidebar.classList.add('right-0', 'border-l');
+                // For mobile transition
+                sidebar.classList.replace('-translate-x-full', 'translate-x-full');
+            } else {
+                sidebar.classList.remove('right-0', 'border-l');
+                sidebar.classList.add('left-0', 'border-r');
+                sidebar.classList.replace('translate-x-full', '-translate-x-full');
+            }
+
+            // Mirror Main Content Margin
+            const main = document.querySelector('main');
+            if (!isRtl) {
+                main.classList.remove('lg:ml-72');
+                main.classList.add('lg:mr-72');
+            } else {
+                main.classList.remove('lg:mr-72');
+                main.classList.add('lg:ml-72');
+            }
+        });
+
+        // Sidebar Toggle (Mobile)
+        document.getElementById('sidebarToggle').addEventListener('click', () => {
+            const sidebar = document.getElementById('sidebar');
+            const isRtl = html.getAttribute('dir') === 'rtl';
+            
+            if (isRtl) {
+                sidebar.classList.toggle('translate-x-full');
+            } else {
+                sidebar.classList.toggle('-translate-x-full');
+            }
+        });
+
+        // Theme Toggle
+        const themeBtn = document.getElementById('themeToggle');
+        themeBtn.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const icon = themeBtn.querySelector('i');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        });
+    </script>
+</body>
+</html>
