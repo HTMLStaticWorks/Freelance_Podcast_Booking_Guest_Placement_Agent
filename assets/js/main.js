@@ -54,33 +54,69 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Scroll Reveal
-    const revealElements = document.querySelectorAll('.reveal');
-    const reveal = () => {
-        revealElements.forEach(el => {
-            const windowHeight = window.innerHeight;
-            const revealTop = el.getBoundingClientRect().top;
-            const revealPoint = 150;
-            if (revealTop < windowHeight - revealPoint) {
-                el.classList.add('active');
+    // Professional Dashboard Sidebar System
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+    const sidebarLinks = sidebar?.querySelectorAll('nav a');
+
+    if (sidebar && sidebarToggle) {
+        function openSidebar() {
+            sidebar.classList.remove('sidebar-hidden');
+            sidebar.style.transform = 'translateX(0)';
+            if (sidebarBackdrop) sidebarBackdrop.classList.add('active');
+            document.body.classList.add('sidebar-open');
+        }
+
+        function closeSidebar() {
+            if (window.innerWidth < 1024) {
+                sidebar.classList.add('sidebar-hidden');
+                sidebar.style.transform = '';
+                if (sidebarBackdrop) sidebarBackdrop.classList.remove('active');
+                document.body.classList.remove('sidebar-open');
+            }
+        }
+
+        // Toggle Click (Modern Event Listener)
+        sidebarToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            if (sidebar.classList.contains('sidebar-hidden')) {
+                openSidebar();
+            } else {
+                closeSidebar();
             }
         });
-    };
-    window.addEventListener('scroll', reveal);
-    reveal(); // Initial check
 
-    // Dashboard Sidebar Toggle
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    const sidebar = document.getElementById('sidebar');
-    if (sidebarToggle && sidebar) {
-        sidebarToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('sidebar-hidden');
+        // Backdrop & Close Button Click
+        const sidebarClose = document.getElementById('sidebarClose');
+        if (sidebarBackdrop) sidebarBackdrop.onclick = closeSidebar;
+        if (sidebarClose) sidebarClose.onclick = closeSidebar;
+
+        // Close on Link Click (Mobile)
+        sidebarLinks?.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 1024) closeSidebar();
+            });
+        });
+
+        // Handle Window Resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                sidebar.classList.remove('sidebar-hidden');
+                sidebar.style.transform = 'translateX(0)';
+                if (sidebarBackdrop) sidebarBackdrop.classList.remove('active');
+                document.body.classList.remove('sidebar-open');
+            } else {
+                sidebar.classList.add('sidebar-hidden');
+                sidebar.style.transform = '';
+            }
         });
     }
 
-    // Active Link Highlighting
+    // Active Link Highlighting (Global)
     const currentPath = window.location.pathname;
-    const navLinks = document.querySelectorAll('nav a:not(.gradient-text)');
+    const navLinks = document.querySelectorAll('nav a:not(.group)');
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
         // Handle cases where the link might be relative or absolute
@@ -112,4 +148,55 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // FAQ Dropdown Logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const btn = item.querySelector('button');
+        const answer = item.querySelector('.faq-answer');
+        const icon = item.querySelector('.fa-chevron-down');
+
+        if (btn && answer) {
+            btn.addEventListener('click', () => {
+                const isOpen = !answer.classList.contains('hidden');
+                
+                // Close all other FAQs (optional, but cleaner)
+                faqItems.forEach(otherItem => {
+                    otherItem.querySelector('.faq-answer').classList.add('hidden');
+                    otherItem.querySelector('.fa-chevron-down').classList.remove('rotate-180');
+                    otherItem.classList.remove('border-primary');
+                });
+
+                if (!isOpen) {
+                    answer.classList.remove('hidden');
+                    icon.classList.add('rotate-180');
+                    item.classList.add('border-primary');
+                }
+            });
+        }
+    });
+
+    // Scroll Reveal Logic
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+    // Password Visibility Toggle
+    window.togglePassword = function(id, btn) {
+        const input = document.getElementById(id);
+        const icon = btn.querySelector('i');
+        if (input.type === 'password') {
+            input.type = 'text';
+            icon.classList.replace('fa-eye', 'fa-eye-slash');
+        } else {
+            input.type = 'password';
+            icon.classList.replace('fa-eye-slash', 'fa-eye');
+        }
+    };
 });

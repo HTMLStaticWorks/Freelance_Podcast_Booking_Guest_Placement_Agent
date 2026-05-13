@@ -27,7 +27,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -38,7 +38,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center">
-                    <a href="../index.html" class="flex items-center space-x-3 group">
+                    <a href="../index.html" class="flex items-center space-x-3 rtl:space-x-reverse group">
                         <img src="../podlink_logo_icon_1778567690962.png" alt="PodLink Logo" class="w-10 h-10 object-contain group-hover:scale-110 transition-transform">
                         <span class="text-2xl font-bold gradient-text">PodLink</span>
                     </a>
@@ -57,14 +57,14 @@
                 </div>
 
                 <!-- Utilities -->
-                <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                    <button id="themeToggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+                <div class="nav-utilities">
+                    <button id="themeToggle" class="utility-btn" title="Toggle Theme">
                         <i class="fas fa-moon text-slate-600 dark:text-slate-300"></i>
                     </button>
-                    <button id="rtlToggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-sm font-bold">
+                    <button id="rtlToggle" class="utility-btn" title="Toggle RTL">
                         RTL
                     </button>
-                    <button id="mobileMenuBtn" class="lg:hidden p-2">
+                    <button id="mobileMenuBtn" class="lg:hidden utility-btn px-2 ml-1">
                         <i class="fas fa-bars text-2xl text-slate-600 dark:text-slate-300"></i>
                     </button>
                 </div>
@@ -91,7 +91,7 @@
                     <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-bold mb-6 inline-block">FOR MODERN CREATORS</span>
                     <h1 class="text-6xl font-black mb-8 leading-tight">Go Viral with <br> <span class="gradient-text">Strategic Guesting</span></h1>
                     <p class="text-lg text-slate-500 mb-10">We don't just book shows; we engineer visibility. From YouTube podcasts to Spotify originals, we place you where the attention is.</p>
-                    <div class="flex space-x-4 rtl:space-x-reverse">
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 rtl:sm:space-x-reverse">
                         <button class="px-8 py-4 bg-slate-900 dark:bg-white dark:text-slate-900 text-white rounded-2xl font-bold hover:scale-105 transition-all">Explore Platform</button>
                         <button class="px-8 py-4 glass-card rounded-2xl font-bold">Watch Demo</button>
                     </div>
@@ -112,7 +112,7 @@
         </div>
         <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="glass-card p-6 rounded-3xl reveal">
-                <div class="flex items-center space-x-3 mb-4">
+                <div class="flex items-center space-x-3 rtl:space-x-reverse mb-4">
                     <i class="fab fa-spotify text-3xl text-green-500"></i>
                     <h4 class="font-bold">Spotify</h4>
                 </div>
@@ -122,7 +122,7 @@
                 <p class="text-xs text-slate-500">75% Audience Affinity</p>
             </div>
             <div class="glass-card p-6 rounded-3xl reveal delay-100">
-                <div class="flex items-center space-x-3 mb-4">
+                <div class="flex items-center space-x-3 rtl:space-x-reverse mb-4">
                     <i class="fab fa-apple text-3xl text-slate-900 dark:text-white"></i>
                     <h4 class="font-bold">Apple Podcasts</h4>
                 </div>
@@ -132,7 +132,7 @@
                 <p class="text-xs text-slate-500">85% Listener Engagement</p>
             </div>
             <div class="glass-card p-6 rounded-3xl reveal delay-200">
-                <div class="flex items-center space-x-3 mb-4">
+                <div class="flex items-center space-x-3 rtl:space-x-reverse mb-4">
                     <i class="fab fa-youtube text-3xl text-red-600"></i>
                     <h4 class="font-bold">YouTube</h4>
                 </div>
@@ -142,7 +142,7 @@
                 <p class="text-xs text-slate-500">95% Growth Potential</p>
             </div>
             <div class="glass-card p-6 rounded-3xl reveal delay-300">
-                <div class="flex items-center space-x-3 mb-4">
+                <div class="flex items-center space-x-3 rtl:space-x-reverse mb-4">
                     <i class="fas fa-chart-pie text-3xl text-blue-500"></i>
                     <h4 class="font-bold">Niche Shows</h4>
                 </div>
@@ -161,15 +161,15 @@
                 <h2 class="text-4xl font-bold mb-6">The Viral Clipping Workflow</h2>
                 <p class="text-slate-500 mb-8">We don't just book you; we help you repurpose your guest appearances into viral content for TikTok, Reels, and Shorts.</p>
                 <ul class="space-y-4">
-                    <li class="flex items-start space-x-3">
+                    <li class="flex items-start space-x-3 rtl:space-x-reverse">
                         <i class="fas fa-check-circle text-primary mt-1"></i>
                         <span>AI-driven clip identification from your episodes.</span>
                     </li>
-                    <li class="flex items-start space-x-3">
+                    <li class="flex items-start space-x-3 rtl:space-x-reverse">
                         <i class="fas fa-check-circle text-primary mt-1"></i>
                         <span>Social-first captioning and formatting.</span>
                     </li>
-                    <li class="flex items-start space-x-3">
+                    <li class="flex items-start space-x-3 rtl:space-x-reverse">
                         <i class="fas fa-check-circle text-primary mt-1"></i>
                         <span>Cross-platform distribution strategy.</span>
                     </li>
@@ -194,12 +194,128 @@
         </div>
     </section>
 
+    <!-- Top Tier Networks -->
+    <section class="py-24 bg-slate-50 dark:bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-4">Top-Tier <span class="gradient-text">Network Placements</span></h2>
+                <p class="text-slate-500">We place our clients on the world's most influential podcast networks.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-60">
+                <div class="flex justify-center reveal"><i class="fab fa-spotify text-5xl hover:text-green-500 transition-colors"></i></div>
+                <div class="flex justify-center reveal delay-100"><i class="fab fa-apple text-5xl hover:text-slate-900 dark:hover:text-white transition-colors"></i></div>
+                <div class="flex justify-center reveal delay-200"><i class="fab fa-amazon text-5xl hover:text-orange-500 transition-colors"></i></div>
+                <div class="flex justify-center reveal delay-300"><i class="fab fa-google-play text-5xl hover:text-blue-500 transition-colors"></i></div>
+                <div class="flex justify-center reveal delay-400"><i class="fab fa-youtube text-5xl hover:text-red-600 transition-colors"></i></div>
+                <div class="flex justify-center reveal delay-500"><i class="fab fa-soundcloud text-5xl hover:text-orange-600 transition-colors"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Precision Workflow -->
+    <section class="py-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 reveal">
+                    <div class="relative">
+                        <div class="absolute -top-20 -left-20 w-64 h-64 bg-primary/20 blur-3xl rounded-full"></div>
+                        <img src="../podcast_booking_process_infographic_1778642770330.png" alt="Workflow Process" class="rounded-3xl shadow-2xl relative z-10 border border-white/10">
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 reveal delay-200">
+                    <h2 class="text-4xl font-bold mb-8">Engineering Your <span class="text-primary">Growth</span></h2>
+                    <div class="space-y-8">
+                        <div class="flex space-x-6 rtl:space-x-reverse">
+                            <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary font-bold">1</div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Audience Analysis</h4>
+                                <p class="text-slate-500">We deep-dive into your brand's data to find the exact listener demographics that convert.</p>
+                            </div>
+                        </div>
+                        <div class="flex space-x-6 rtl:space-x-reverse">
+                            <div class="flex-shrink-0 w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary font-bold">2</div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Strategic Pitching</h4>
+                                <p class="text-slate-500">Our team crafts personalized pitches that focus on the unique value you bring to top-tier hosts.</p>
+                            </div>
+                        </div>
+                        <div class="flex space-x-6 rtl:space-x-reverse">
+                            <div class="flex-shrink-0 w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center text-green-500 font-bold">3</div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Viral Repurposing</h4>
+                                <p class="text-slate-500">Post-episode, we transform your appearance into short-form assets for social dominance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Growth Plans -->
+    <section class="py-24 bg-slate-50 dark:bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-4">Pricing for <span class="gradient-text">Every Scale</span></h2>
+                <p class="text-slate-500">Choose the path that matches your brand's ambition.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Starter -->
+                <div class="glass-card p-8 rounded-3xl reveal">
+                    <h4 class="text-xl font-bold mb-2">Growth Starter</h4>
+                    <p class="text-slate-500 mb-6 italic text-sm">Perfect for emerging experts.</p>
+                    <div class="mb-8">
+                        <span class="text-4xl font-black">$1,499</span>
+                        <span class="text-slate-400">/mo</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-sm">
+                        <li class="flex items-center space-x-3 rtl:space-x-reverse"><i class="fas fa-check text-green-500"></i> <span>2 Guaranteed Bookings</span></li>
+                        <li class="flex items-center space-x-3 rtl:space-x-reverse"><i class="fas fa-check text-green-500"></i> <span>Audience Alignment Report</span></li>
+                        <li class="flex items-center space-x-3 rtl:space-x-reverse"><i class="fas fa-check text-green-500"></i> <span>Basic Media Kit</span></li>
+                    </ul>
+                    <button class="w-full py-4 rounded-xl border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all">Select Plan</button>
+                </div>
+                <!-- Pro -->
+                <div class="glass-card p-8 rounded-3xl border-2 border-primary relative reveal delay-100 scale-105 shadow-2xl z-10">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Most Popular</div>
+                    <h4 class="text-xl font-bold mb-2">Authority Pro</h4>
+                    <p class="text-slate-500 mb-6 italic text-sm">Our most effective growth engine.</p>
+                    <div class="mb-8">
+                        <span class="text-4xl font-black">$2,999</span>
+                        <span class="text-slate-400">/mo</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-sm">
+                        <li class="flex items-center space-x-3 rtl:space-x-reverse"><i class="fas fa-check text-green-500"></i> <span>5 Guaranteed Bookings</span></li>
+                        <li class="flex items-center space-x-3 rtl:space-x-reverse"><i class="fas fa-check text-green-500"></i> <span>3 Viral Clips per Episode</span></li>
+                        <li class="flex items-center space-x-3 rtl:space-x-reverse"><i class="fas fa-check text-green-500"></i> <span>Advanced Analytics</span></li>
+                    </ul>
+                    <button class="w-full py-4 rounded-xl bg-primary text-white font-bold hover:bg-secondary transition-all">Select Plan</button>
+                </div>
+                <!-- Elite -->
+                <div class="glass-card p-8 rounded-3xl reveal delay-200">
+                    <h4 class="text-xl font-bold mb-2">Viral Elite</h4>
+                    <p class="text-slate-500 mb-6 italic text-sm">Unmatched global reach.</p>
+                    <div class="mb-8">
+                        <span class="text-4xl font-black">$5,999</span>
+                        <span class="text-slate-400">/mo</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-sm">
+                        <li class="flex items-center space-x-3 rtl:space-x-reverse"><i class="fas fa-check text-green-500"></i> <span>10+ Global Bookings</span></li>
+                        <li class="flex items-center space-x-3 rtl:space-x-reverse"><i class="fas fa-check text-green-500"></i> <span>Full Viral Studio Team</span></li>
+                        <li class="flex items-center space-x-3 rtl:space-x-reverse"><i class="fas fa-check text-green-500"></i> <span>PR & Brand Consulting</span></li>
+                    </ul>
+                    <button class="w-full py-4 rounded-xl border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all">Select Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-slate-50 dark:bg-slate-900 border-t border-white/10 pt-20 pb-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-8 md:mb-16">
                 <div class="lg:col-span-2">
-                    <a href="../index.html" class="flex items-center space-x-3 mb-6 group">
+                    <a href="../index.html" class="flex items-center space-x-3 rtl:space-x-reverse mb-6 group">
                         <img src="../podlink_logo_icon_1778567690962.png" alt="PodLink Logo" class="w-8 h-8 object-contain group-hover:rotate-12 transition-transform">
                         <span class="text-3xl font-bold gradient-text">PodLink</span>
                     </a>
@@ -208,7 +324,7 @@
                     </p>
                     <div class="flex space-x-4 rtl:space-x-reverse">
                         <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full footer-social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full footer-social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full footer-social-link"><i class="fab fa-x-twitter"></i></a>
                         <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full footer-social-link"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
@@ -239,7 +355,7 @@
                     </form>
                 </div>
             </div>
-            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+            <div class="border-t border-white/5 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
                 <p>© 2026 PodLink Agency. All rights reserved.</p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
                     <a href="#" class="hover:text-primary">Privacy Policy</a>

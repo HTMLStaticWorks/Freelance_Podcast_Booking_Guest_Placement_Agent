@@ -28,7 +28,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -39,7 +39,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center">
-                    <a href="index.html" class="flex items-center space-x-3 group">
+                    <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse group">
                         <img src="podlink_logo_icon_1778567690962.png" alt="PodLink Logo" class="w-10 h-10 object-contain group-hover:scale-110 transition-transform">
                         <span class="text-2xl font-bold gradient-text">PodLink</span>
                     </a>
@@ -58,14 +58,14 @@
                 </div>
 
                 <!-- Utilities -->
-                <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                    <button id="themeToggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+                <div class="nav-utilities">
+                    <button id="themeToggle" class="utility-btn" title="Toggle Theme">
                         <i class="fas fa-moon text-slate-600 dark:text-slate-300"></i>
                     </button>
-                    <button id="rtlToggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-sm font-bold">
+                    <button id="rtlToggle" class="utility-btn" title="Toggle RTL">
                         RTL
                     </button>
-                    <button id="mobileMenuBtn" class="lg:hidden p-2">
+                    <button id="mobileMenuBtn" class="lg:hidden utility-btn px-2 ml-1">
                         <i class="fas fa-bars text-2xl text-slate-600 dark:text-slate-300"></i>
                     </button>
                 </div>
@@ -117,7 +117,7 @@
                     <img src="podcast_hero_studio_1778566194683.png" alt="Podcast Studio" class="rounded-3xl shadow-2xl relative z-10 border border-white/10">
                     <!-- Floating Analytics UI -->
                     <div class="absolute -bottom-10 -right-10 glass-card p-6 rounded-2xl shadow-2xl z-20 hidden md:block">
-                        <div class="flex items-center space-x-4 mb-4">
+                        <div class="flex items-center space-x-4 rtl:space-x-reverse mb-4">
                             <div class="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center">
                                 <i class="fas fa-chart-line text-green-500"></i>
                             </div>
@@ -141,20 +141,26 @@
                 <p class="text-slate-600 dark:text-slate-400">Target the right audience with data-driven insights.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass-card p-8 rounded-3xl reveal">
-                    <img src="niche_targeting_data_1778567911670.png" alt="Niche Targeting" class="w-full h-32 object-cover rounded-2xl mb-6">
-                    <h3 class="text-xl font-bold mb-3">Niche Targeting</h3>
-                    <p class="text-slate-600 dark:text-slate-400">We analyze 50+ data points to find podcasts that align perfectly with your expertise.</p>
+                <div class="glass-card overflow-hidden rounded-3xl reveal">
+                    <img src="niche_targeting_data_1778567911670.png" alt="Niche Targeting" class="w-full h-48 object-cover">
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-3">Niche Targeting</h3>
+                        <p class="text-slate-600 dark:text-slate-400">We analyze 50+ data points to find podcasts that align perfectly with your expertise.</p>
+                    </div>
                 </div>
-                <div class="glass-card p-8 rounded-3xl reveal delay-100">
-                    <img src="demographic_analysis_people_1778567932626.png" alt="Demographic Analysis" class="w-full h-32 object-cover rounded-2xl mb-6">
-                    <h3 class="text-xl font-bold mb-3">Demographic Analysis</h3>
-                    <p class="text-slate-600 dark:text-slate-400">Understand who is listening. We match you with shows that have your ideal audience profile.</p>
+                <div class="glass-card overflow-hidden rounded-3xl reveal delay-100">
+                    <img src="demographic_analysis_people_1778567932626.png" alt="Demographic Analysis" class="w-full h-48 object-cover">
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-3">Demographic Analysis</h3>
+                        <p class="text-slate-600 dark:text-slate-400">Understand who is listening. We match you with shows that have your ideal audience profile.</p>
+                    </div>
                 </div>
-                <div class="glass-card p-8 rounded-3xl reveal delay-200">
-                    <img src="global_reach_network_1778567953321.png" alt="Global Reach" class="w-full h-32 object-cover rounded-2xl mb-6">
-                    <h3 class="text-xl font-bold mb-3">Global Reach</h3>
-                    <p class="text-slate-600 dark:text-slate-400">Scale your brand internationally with guest appearances on top-tier global networks.</p>
+                <div class="glass-card overflow-hidden rounded-3xl reveal delay-200">
+                    <img src="global_reach_network_1778567953321.png" alt="Global Reach" class="w-full h-48 object-cover">
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-3">Global Reach</h3>
+                        <p class="text-slate-600 dark:text-slate-400">Scale your brand internationally with guest appearances on top-tier global networks.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -194,7 +200,7 @@
                 <h2 class="text-4xl font-bold mb-4">Our Proven Workflow</h2>
                 <p class="text-slate-400">From discovery to promotion, we handle every detail.</p>
             </div>
-            <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-12 gap-x-6">
                 <!-- Step 1 -->
                 <div class="text-center reveal">
                     <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-white/20">1</div>
@@ -238,17 +244,20 @@
     <!-- Success Showcase -->
     <section class="py-24">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-end mb-12 reveal">
-                <div>
-                    <h2 class="text-4xl font-bold mb-4">Client Success</h2>
+            <div class="mb-12 reveal">
+                <h2 class="text-3xl font-black mb-2">Client Success</h2>
+                <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
                     <p class="text-slate-600 dark:text-slate-400">Real results from creators like you.</p>
+                    <a href="pages/case-studies.html" class="text-primary font-bold hover:underline text-sm flex items-center">
+                        View All Case Studies
+                        <i class="fas fa-arrow-right ml-2 rtl:mr-2 rtl:ml-0 text-[10px]"></i>
+                    </a>
                 </div>
-                <a href="pages/case-studies.html" class="text-primary font-bold hover:underline">View All Case Studies</a>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="glass-card overflow-hidden rounded-3xl reveal">
                     <div class="p-8">
-                        <div class="flex items-center space-x-4 mb-6">
+                        <div class="flex items-center space-x-4 rtl:space-x-reverse mb-6">
                             <img src="professional_consultant_1778566228142.png" alt="Client" class="w-16 h-16 rounded-full object-cover">
                             <div>
                                 <h4 class="font-bold text-lg">Alex Rivera</h4>
@@ -267,7 +276,7 @@
                 </div>
                 <div class="glass-card overflow-hidden rounded-3xl reveal delay-100">
                     <div class="p-8">
-                        <div class="flex items-center space-x-4 mb-6">
+                        <div class="flex items-center space-x-4 rtl:space-x-reverse mb-6">
                             <img src="professional_consultant_1778566228142.png" alt="Client" class="w-16 h-16 rounded-full object-cover">
                             <div>
                                 <h4 class="font-bold text-lg">Sarah Chen</h4>
@@ -291,9 +300,9 @@
     <!-- Footer -->
     <footer class="bg-slate-50 dark:bg-slate-900 border-t border-white/10 pt-20 pb-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
-                <div class="lg:col-span-2">
-                    <a href="index.html" class="flex items-center space-x-3 mb-6 group">
+            <div class="grid md:grid-cols-2 xl:grid-cols-5 gap-12 mb-8 md:mb-16">
+                <div class="xl:col-span-2">
+                    <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse mb-6 group">
                         <img src="podlink_logo_icon_1778567690962.png" alt="PodLink Logo" class="w-8 h-8 object-contain group-hover:rotate-12 transition-transform">
                         <span class="text-3xl font-bold gradient-text">PodLink</span>
                     </a>
@@ -302,7 +311,7 @@
                     </p>
                     <div class="flex space-x-4 rtl:space-x-reverse">
                         <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full footer-social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full footer-social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full footer-social-link"><i class="fab fa-x-twitter"></i></a>
                         <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full footer-social-link"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
@@ -333,7 +342,7 @@
                     </form>
                 </div>
             </div>
-            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+            <div class="border-t border-white/5 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
                 <p>© 2026 PodLink Agency. All rights reserved.</p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
                     <a href="#" class="hover:text-primary">Privacy Policy</a>

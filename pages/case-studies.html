@@ -12,7 +12,7 @@
         }
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body class="bg-slate-50 dark:bg-darkBg">
@@ -21,7 +21,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center">
-                    <a href="../index.html" class="flex items-center space-x-3 group">
+                    <a href="../index.html" class="flex items-center space-x-3 rtl:space-x-reverse group">
                         <img src="../podlink_logo_icon_1778567690962.png" alt="PodLink Logo" class="w-10 h-10 object-contain group-hover:scale-110 transition-transform">
                         <span class="text-2xl font-bold gradient-text">PodLink</span>
                     </a>
@@ -40,14 +40,14 @@
                 </div>
 
                 <!-- Utilities -->
-                <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                    <button id="themeToggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+                <div class="nav-utilities">
+                    <button id="themeToggle" class="utility-btn" title="Toggle Theme">
                         <i class="fas fa-moon text-slate-600 dark:text-slate-300"></i>
                     </button>
-                    <button id="rtlToggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-sm font-bold">
+                    <button id="rtlToggle" class="utility-btn" title="Toggle RTL">
                         RTL
                     </button>
-                    <button id="mobileMenuBtn" class="lg:hidden p-2">
+                    <button id="mobileMenuBtn" class="lg:hidden utility-btn px-2 ml-1">
                         <i class="fas fa-bars text-2xl text-slate-600 dark:text-slate-300"></i>
                     </button>
                 </div>
@@ -66,12 +66,18 @@
         </div>
     </nav>
 
-    <header class="pt-40 pb-20 text-center reveal">
-        <h1 class="text-5xl font-black mb-6">Success <span class="gradient-text">Showcase</span></h1>
-        <p class="text-slate-500 max-w-xl mx-auto">See how we've helped experts scale their influence through strategic guesting.</p>
+    <header class="relative pt-40 pb-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="../services_hero_bg_1778570293952.png" alt="Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-slate-50/40 dark:bg-darkBg/80"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 text-center reveal relative z-10">
+            <h1 class="text-5xl md:text-7xl font-black mb-6">Success <span class="gradient-text">Showcase</span></h1>
+            <p class="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">See how we've helped experts scale their influence through strategic guesting.</p>
+        </div>
     </header>
 
-    <section class="py-24">
+    <section class="py-24 bg-white dark:bg-slate-900/30 border-t border-slate-200/50 dark:border-white/5 shadow-2xl shadow-slate-200/50 dark:shadow-none">
         <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12">
             <!-- Case Study 1 -->
             <div class="glass-card rounded-[2.5rem] overflow-hidden reveal">
@@ -128,9 +134,84 @@
             <h2 class="text-4xl font-bold mb-4">Deep Data Insights</h2>
             <p class="text-slate-500">We don't just guess. we use hard metrics to prove value.</p>
         </div>
-        <div class="max-w-4xl mx-auto reveal">
-            <div class="glass-card p-4 rounded-3xl">
-                <img src="../analytics_dashboard_ui_1778566212161.png" alt="Data" class="w-full rounded-2xl">
+        <div class="max-w-3xl mx-auto reveal">
+            <div class="glass-card p-4 rounded-[2.5rem] shadow-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-500">
+                <img src="../analytics_dashboard_ui_1778566212161.png" alt="Data" class="w-full h-auto rounded-[2rem] border border-white/10">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: Cumulative Impact -->
+    <section class="py-24 bg-slate-900 text-white overflow-hidden relative">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-secondary rounded-full blur-[100px] translate-x-1/2 translate-y-1/2"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div class="reveal">
+                    <p class="text-5xl font-black gradient-text mb-2">500+</p>
+                    <p class="text-sm uppercase tracking-widest text-slate-400">Podcasts in Network</p>
+                </div>
+                <div class="reveal delay-100">
+                    <p class="text-5xl font-black gradient-text mb-2">15M+</p>
+                    <p class="text-sm uppercase tracking-widest text-slate-400">Total Listener Reach</p>
+                </div>
+                <div class="reveal delay-200">
+                    <p class="text-5xl font-black gradient-text mb-2">92%</p>
+                    <p class="text-sm uppercase tracking-widest text-slate-400">Re-booking Rate</p>
+                </div>
+                <div class="reveal delay-300">
+                    <p class="text-5xl font-black gradient-text mb-2">24h</p>
+                    <p class="text-sm uppercase tracking-widest text-slate-400">Average Response Time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Success Strategy -->
+    <section class="py-24 bg-slate-50 dark:bg-darkBg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-4">How We Drive <span class="text-primary">Results</span></h2>
+                <p class="text-slate-500">A data-driven approach to every single placement.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="reveal">
+                    <div class="text-4xl font-black text-slate-200 dark:text-slate-800 mb-4">01</div>
+                    <h4 class="text-xl font-bold mb-3">Audience Mapping</h4>
+                    <p class="text-slate-500 text-sm">We analyze podcast demographics to ensure your message hits the right ears at the right time.</p>
+                </div>
+                <div class="reveal delay-100">
+                    <div class="text-4xl font-black text-slate-200 dark:text-slate-800 mb-4">02</div>
+                    <h4 class="text-xl font-bold mb-3">Hook Engineering</h4>
+                    <p class="text-slate-500 text-sm">Our writers craft story angles that are impossible for producers to ignore, ensuring higher acceptance.</p>
+                </div>
+                <div class="reveal delay-200">
+                    <div class="text-4xl font-black text-slate-200 dark:text-slate-800 mb-4">03</div>
+                    <h4 class="text-xl font-bold mb-3">Post-Show Scaling</h4>
+                    <p class="text-slate-500 text-sm">We provide the assets and strategy to turn a 40-minute interview into months of social content.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Final CTA Box -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="glass-card bg-primary rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden reveal">
+                <div class="absolute inset-0 opacity-20">
+                    <div class="absolute -top-24 -left-24 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+                    <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
+                </div>
+                <div class="relative z-10 max-w-2xl mx-auto">
+                    <h2 class="text-4xl md:text-5xl font-black mb-8">Ready to be our next <br> success story?</h2>
+                    <p class="text-lg text-white/80 mb-10">Join 200+ industry leaders who are dominating the airwaves with PodLink.</p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="signup.html" class="px-10 py-5 bg-white text-primary rounded-2xl font-bold hover:scale-105 hover:-translate-y-1 transition-all shadow-xl hover:shadow-2xl hover:shadow-white/20">Get Started Now</a>
+                        <a href="contact.html" class="px-10 py-5 bg-white/10 border border-white/20 text-white rounded-2xl font-bold hover:bg-white/20 hover:-translate-y-1 transition-all">Talk to an Agent</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -139,7 +220,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
                 <div class="lg:col-span-2">
-                    <a href="../index.html" class="flex items-center space-x-3 mb-6 group">
+                    <a href="../index.html" class="flex items-center space-x-3 rtl:space-x-reverse mb-6 group">
                         <img src="../podlink_logo_icon_1778567690962.png" alt="PodLink Logo" class="w-8 h-8 object-contain group-hover:rotate-12 transition-transform">
                         <span class="text-3xl font-bold gradient-text">PodLink</span>
                     </a>
@@ -148,7 +229,7 @@
                     </p>
                     <div class="flex space-x-4 rtl:space-x-reverse">
                         <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full footer-social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full footer-social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full footer-social-link"><i class="fab fa-x-twitter"></i></a>
                         <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full footer-social-link"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
@@ -188,6 +269,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top -->
+    <div id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 
     <script src="../assets/js/main.js"></script>
 </body>
