@@ -157,7 +157,7 @@ a[class*="bg-secondary"]:hover, button[class*="bg-secondary"]:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.dark .bg-white:hover:not(.cta-btn), .dark [class*="bg-white"]:hover:not(.cta-btn) {
+.dark a.bg-white:hover:not(.cta-btn), .dark button.bg-white:hover:not(.cta-btn), .dark a[class*="bg-white"]:hover:not(.cta-btn), .dark button[class*="bg-white"]:hover:not(.cta-btn) {
     background-color: var(--primary) !important;
     color: #ffffff !important;
 }
@@ -209,15 +209,19 @@ a.glass-card:hover {
     font-weight: 700;
     font-size: 0.75rem;
     padding: 0 12px;
-    background: rgba(226, 232, 240, 0.5);
-    border: 1px solid rgba(203, 213, 225, 0.5);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     color: #475569;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .dark .utility-btn {
-    background: rgba(30, 41, 59, 0.5);
+    background: rgba(30, 41, 59, 0.4);
     border-color: rgba(255, 255, 255, 0.1);
     color: #f8fafc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .utility-btn:hover {
@@ -225,14 +229,14 @@ a.glass-card:hover {
     background: #ffffff !important;
     border-color: var(--primary) !important;
     color: var(--primary) !important;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.1);
 }
 
 .dark .utility-btn:hover {
     background: var(--primary) !important;
     border-color: var(--primary) !important;
     color: #ffffff !important;
-    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.4);
 }
 
 #themeToggle {
@@ -308,6 +312,12 @@ nav a.group::after, footer a.group::after {
     background-color: rgba(30, 41, 59, 0.5) !important;
     border-color: rgba(255, 255, 255, 0.1) !important;
     color: #f8fafc !important;
+}
+
+.dark input:hover, .dark textarea:hover, .dark select:hover {
+    background-color: rgba(30, 41, 59, 0.5) !important;
+    transform: none !important;
+    box-shadow: none !important;
 }
 
 .dark input::placeholder, .dark textarea::placeholder {
@@ -386,7 +396,7 @@ nav a.group::after, footer a.group::after {
 }
 
 .dark nav a:not(.bg-primary):hover, .dark a.glass-card:hover, .dark button.glass-card:hover, .dark a:not([class*="bg-"]):hover, .dark button:not([class*="bg-"]):hover {
-    color: #ffffff !important;
+    color: var(--primary-soft) !important;
 }
 
 /* Footer Social Icons Fix */

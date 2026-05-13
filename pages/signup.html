@@ -17,14 +17,16 @@
 </head>
 <body class="bg-slate-50 dark:bg-darkBg min-h-screen flex flex-col items-center justify-center p-4 relative">
 
-    <!-- Theme & RTL Toggles -->
-    <div class="fixed top-6 right-6 nav-utilities z-50">
-        <button id="themeToggle" class="utility-btn shadow-xl" title="Toggle Theme">
-            <i class="fas fa-moon"></i>
-        </button>
-        <button id="rtlToggle" class="utility-btn shadow-xl" title="Toggle RTL">
-            RTL
-        </button>
+    <!-- Utility Toggles Area -->
+    <div class="w-full max-w-md flex justify-end mb-4 z-50">
+        <div class="nav-utilities">
+            <button id="themeToggle" class="utility-btn" title="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button id="rtlToggle" class="utility-btn" title="Toggle RTL">
+                RTL
+            </button>
+        </div>
     </div>
 
     <div class="w-full max-w-2xl reveal">
@@ -48,7 +50,7 @@
                     <label class="block text-xs font-bold uppercase text-slate-500 mb-2 rtl:text-right">Email Address</label>
                     <input type="email" placeholder="john@example.com" class="w-full px-5 py-4 bg-slate-100 dark:bg-white/5 border border-transparent focus:border-primary rounded-2xl focus:outline-none transition-all dark:text-white">
                 </div>
-                <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-6">
                     <div>
                         <label class="block text-xs font-bold uppercase text-slate-500 mb-2 rtl:text-right">Expertise Niche</label>
                         <input type="text" placeholder="e.g. AI Strategy" class="w-full px-5 py-4 bg-slate-100 dark:bg-white/5 border border-transparent focus:border-primary rounded-2xl focus:outline-none transition-all dark:text-white">
@@ -58,7 +60,7 @@
                         <input type="text" placeholder="linkedin.com/in/..." class="w-full px-5 py-4 bg-slate-100 dark:bg-white/5 border border-transparent focus:border-primary rounded-2xl focus:outline-none transition-all dark:text-white">
                     </div>
                 </div>
-                <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-6">
                     <div>
                         <label class="block text-xs font-bold uppercase text-slate-500 mb-2 rtl:text-right">Password</label>
                         <div class="relative group">
@@ -116,14 +118,5 @@
     </div>
 
     <script src="../assets/js/main.js"></script>
-    <script>
-        const rtlToggle = document.getElementById('rtlToggle');
-        if (rtlToggle) {
-            rtlToggle.addEventListener('click', () => {
-                const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
-                document.documentElement.setAttribute('dir', isRtl ? 'ltr' : 'rtl');
-            });
-        }
-    </script>
 </body>
 </html>

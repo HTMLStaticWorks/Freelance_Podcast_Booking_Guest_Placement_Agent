@@ -17,14 +17,16 @@
 </head>
 <body class="bg-slate-50 dark:bg-darkBg min-h-screen flex flex-col items-center justify-center p-4 relative">
 
-    <!-- Theme & RTL Toggles -->
-    <div class="fixed top-6 right-6 nav-utilities z-50">
-        <button id="themeToggle" class="utility-btn shadow-xl" title="Toggle Theme">
-            <i class="fas fa-moon"></i>
-        </button>
-        <button id="rtlToggle" class="utility-btn shadow-xl" title="Toggle RTL">
-            RTL
-        </button>
+    <!-- Utility Toggles Area -->
+    <div class="w-full max-w-md flex justify-end mb-4 z-50">
+        <div class="nav-utilities">
+            <button id="themeToggle" class="utility-btn" title="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button id="rtlToggle" class="utility-btn" title="Toggle RTL">
+                RTL
+            </button>
+        </div>
     </div>
 
     <div class="w-full max-w-md reveal">
@@ -89,15 +91,5 @@
     </div>
 
     <script src="../assets/js/main.js"></script>
-    <script>
-        // RTL Toggle for Login Page specifically if main.js is not enough
-        const rtlToggle = document.getElementById('rtlToggle');
-        if (rtlToggle) {
-            rtlToggle.addEventListener('click', () => {
-                const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
-                document.documentElement.setAttribute('dir', isRtl ? 'ltr' : 'rtl');
-            });
-        }
-    </script>
 </body>
 </html>
