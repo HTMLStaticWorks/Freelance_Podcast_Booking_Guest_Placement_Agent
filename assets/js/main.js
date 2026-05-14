@@ -52,6 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
     }
 
     // Professional Dashboard Sidebar System
@@ -69,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function closeSidebar() {
-            if (window.innerWidth < 1024) {
+            if (window.innerWidth < 1280) {
                 sidebar.classList.add('sidebar-hidden');
                 sidebar.style.transform = '';
                 if (sidebarBackdrop) sidebarBackdrop.classList.remove('active');
@@ -90,19 +98,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Backdrop & Close Button Click
         const sidebarClose = document.getElementById('sidebarClose');
-        if (sidebarBackdrop) sidebarBackdrop.onclick = closeSidebar;
-        if (sidebarClose) sidebarClose.onclick = closeSidebar;
+        if (sidebarBackdrop) {
+            sidebarBackdrop.addEventListener('click', closeSidebar);
+        }
+        if (sidebarClose) {
+            sidebarClose.addEventListener('click', closeSidebar);
+        }
 
         // Close on Link Click (Mobile)
         sidebarLinks?.forEach(link => {
             link.addEventListener('click', () => {
-                if (window.innerWidth < 1024) closeSidebar();
+                if (window.innerWidth < 1280) closeSidebar();
             });
         });
 
         // Handle Window Resize
         window.addEventListener('resize', () => {
-            if (window.innerWidth >= 1024) {
+            if (window.innerWidth >= 1280) {
                 sidebar.classList.remove('sidebar-hidden');
                 sidebar.style.transform = 'translateX(0)';
                 if (sidebarBackdrop) sidebarBackdrop.classList.remove('active');

@@ -391,11 +391,11 @@ nav a.group::after, footer a.group::after {
     color: #ffffff !important;
 }
 
-.dark nav a:not(.bg-primary), .dark a.glass-card, .dark button.glass-card, .dark a:not([class*="bg-"]), .dark button:not([class*="bg-"]) {
+.dark nav a:not(.bg-primary), .dark a.glass-card, .dark button.glass-card, .dark a:not([class*="bg-"]):not(.utility-btn), .dark button:not([class*="bg-"]):not(.utility-btn) {
     color: #e2e8f0 !important;
 }
 
-.dark nav a:not(.bg-primary):hover, .dark a.glass-card:hover, .dark button.glass-card:hover, .dark a:not([class*="bg-"]):hover, .dark button:not([class*="bg-"]):hover {
+.dark nav a:not(.bg-primary):hover, .dark a.glass-card:hover, .dark button.glass-card:hover, .dark a:not([class*="bg-"]):not(.utility-btn):hover, .dark button:not([class*="bg-"]):not(.utility-btn):hover {
     color: var(--primary-soft) !important;
 }
 
@@ -456,10 +456,10 @@ nav a.group::after, footer a.group::after {
 }
 
 #sidebar {
-    z-index: 100; /* Above everything */
+    z-index: 1000; /* High z-index to stay above backdrop and header */
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1279px) {
     .sidebar-hidden {
         transform: translateX(-100%) !important;
         opacity: 0;
@@ -476,7 +476,7 @@ nav a.group::after, footer a.group::after {
     inset: 0;
     background: rgba(15, 23, 42, 0.5);
     backdrop-filter: blur(4px);
-    z-index: 90;
+    z-index: 800;
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s ease;
@@ -499,6 +499,10 @@ body.sidebar-open {
 
 #sidebar nav a:hover, #sidebar nav a.active {
     transform: translateX(5px);
+}
+
+[dir='rtl'] #sidebar nav a:hover, [dir='rtl'] #sidebar nav a.active {
+    transform: translateX(-5px);
 }
 
 .dark #sidebar nav a:not(.active):hover {
@@ -526,10 +530,22 @@ body.sidebar-open {
     box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
 }
 
+.analytics-circle {
+    border-color: rgba(226, 232, 240, 0.8) !important;
+    border-top-color: var(--secondary) !important;
+}
+
+.dark .analytics-circle {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    border-top-color: var(--secondary) !important;
+}
+
+
 #backToTop {
     position: fixed;
     bottom: 30px;
     right: 30px;
+    inset-inline-end: 30px;
     width: 50px;
     height: 50px;
     background: var(--primary);

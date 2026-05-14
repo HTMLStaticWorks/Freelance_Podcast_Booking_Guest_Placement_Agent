@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | PodLink Client Portal</title>
+    <link rel="icon" type="image/png" href="../podlink_logo_icon_1778567690962.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -21,15 +22,21 @@
     <div id="sidebarBackdrop" class="sidebar-backdrop xl:hidden"></div>
 
     <!-- Sidebar -->
-    <aside id="sidebar" class="fixed left-0 top-0 h-full w-72 bg-white dark:bg-slate-900 border-r border-white/10 sidebar-transition sidebar-hidden xl:translate-x-0 flex flex-col">
+    <aside id="sidebar" class="fixed start-0 top-0 h-full w-72 bg-white dark:bg-slate-900 border-e border-white/10 sidebar-transition sidebar-hidden xl:translate-x-0 flex flex-col">
         <div class="p-8">
             <a href="../index.html" class="flex items-center space-x-3 rtl:space-x-reverse group">
                 <img src="../podlink_logo_icon_1778567690962.png" alt="PodLink Logo" class="w-10 h-10 object-contain group-hover:scale-110 transition-transform">
                 <span class="text-2xl font-bold gradient-text">PodLink</span>
             </a>
-            <button id="sidebarClose" class="xl:hidden absolute top-8 right-8 text-slate-400 hover:text-primary transition-colors">
+            <button id="sidebarClose" class="xl:hidden absolute top-8 end-8 text-slate-400 hover:text-primary transition-colors">
                 <i class="fas fa-times text-2xl"></i>
             </button>
+        </div>
+
+        <!-- Welcome Text (Mobile Only) -->
+        <div class="px-8 py-4 xl:hidden border-b border-white/5 mb-4">
+            <p class="text-xs text-slate-500 uppercase font-bold mb-1">Current Session</p>
+            <h2 class="text-lg font-bold gradient-text">Welcome back, Alex!</h2>
         </div>
         <nav id="sidebarNav" class="mt-8 px-4 space-y-2 flex-grow overflow-y-auto">
             <a href="#" data-section="overview" class="flex items-center space-x-3 rtl:space-x-reverse p-4 bg-primary text-white rounded-2xl transition-all duration-300">
@@ -62,14 +69,14 @@
     </aside>
 
     <!-- Main Content -->
-    <main class="xl:ml-72 min-h-screen transition-all">
+    <main class="xl:ms-72 min-h-screen transition-all">
         <!-- Top Bar -->
-        <header class="h-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-white/10 flex items-center justify-between px-4 sm:px-8 sticky top-0 z-40">
+        <header class="h-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-white/10 flex items-center justify-between px-6 sm:px-8 sticky top-0 z-[900]">
             <div class="flex items-center space-x-2 sm:space-x-4 rtl:space-x-reverse min-w-0">
                 <button id="sidebarToggle" class="xl:hidden p-2 flex-shrink-0 flex items-center justify-center hover:scale-110 active:scale-95 transition-all focus:outline-none" aria-label="Toggle Sidebar">
                     <i class="fas fa-bars text-2xl sm:text-3xl text-primary"></i>
                 </button>
-                <h2 class="text-sm sm:text-lg md:text-xl font-bold truncate ml-1 sm:ml-3">Welcome back, Alex!</h2>
+                <h2 class="hidden sm:block text-sm sm:text-lg md:text-xl font-bold truncate ms-1 sm:ms-3">Welcome back, Alex!</h2>
             </div>
             <div class="nav-utilities flex items-center space-x-2 sm:space-x-4 rtl:space-x-reverse">
                 <div class="hidden xl:flex items-center space-x-2 rtl:space-x-reverse text-xs font-bold px-3 py-1 bg-green-500/10 text-green-500 rounded-full">
@@ -214,7 +221,7 @@
                                         <p class="text-xs text-slate-500">Entrepreneurship • 500k Monthly Listeners</p>
                                     </div>
                                 </div>
-                                <div class="flex items-center space-x-8 ml-auto md:ml-0">
+                                <div class="flex items-center space-x-8 ms-auto md:ms-0">
                                     <div class="text-center">
                                         <p class="text-[10px] text-slate-400 uppercase font-bold">Match Score</p>
                                         <p class="text-green-500 font-bold">98%</p>
@@ -230,7 +237,7 @@
                                         <p class="text-xs text-slate-500">Tech • 120k Monthly Listeners</p>
                                     </div>
                                 </div>
-                                <div class="flex items-center space-x-8 ml-auto md:ml-0">
+                                <div class="flex items-center space-x-8 ms-auto md:ms-0">
                                     <div class="text-center">
                                         <p class="text-[10px] text-slate-400 uppercase font-bold">Match Score</p>
                                         <p class="text-green-500 font-bold">94%</p>
@@ -246,7 +253,7 @@
                                         <p class="text-xs text-slate-500">Lifestyle • 80k Monthly Listeners</p>
                                     </div>
                                 </div>
-                                <div class="flex items-center space-x-8 ml-auto md:ml-0">
+                                <div class="flex items-center space-x-8 ms-auto md:ms-0">
                                     <div class="text-center">
                                         <p class="text-[10px] text-slate-400 uppercase font-bold">Match Score</p>
                                         <p class="text-orange-500 font-bold">82%</p>
@@ -411,7 +418,7 @@
                             <p class="text-sm text-slate-500">Your reach has increased by 45% this quarter.</p>
                         </div>
                         <div class="glass-card p-8 rounded-3xl h-80 flex flex-col items-center justify-center text-center">
-                            <div class="w-40 h-40 rounded-full border-8 border-slate-100 dark:border-white/10 border-t-secondary relative flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(236,72,153,0.15)]">
+                            <div class="analytics-circle w-40 h-40 rounded-full border-8 border-slate-100 dark:border-white/10 border-t-secondary relative flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(236,72,153,0.15)]">
                                 <span class="text-3xl font-black text-secondary">68%</span>
                             </div>
                             <h4 class="font-bold mb-2">Booking Conversion</h4>
@@ -525,40 +532,11 @@
             });
         });
 
-        // Dashboard RTL Toggle (Enhanced with Sidebar Mirroring)
+        // Dashboard RTL Toggle - Simplified (Logical properties handle the mirroring)
         const rtlBtn = document.getElementById('rtlToggle');
-        const html = document.documentElement;
-
         if (rtlBtn) {
-            rtlBtn.addEventListener('click', () => {
-                setTimeout(() => {
-                    const isRtl = html.getAttribute('dir') === 'rtl';
-                    
-                    // Mirror Sidebar
-                    const sidebar = document.getElementById('sidebar');
-                    if (sidebar) {
-                        if (isRtl) {
-                            sidebar.classList.remove('left-0', 'border-r');
-                            sidebar.classList.add('right-0', 'border-l');
-                        } else {
-                            sidebar.classList.remove('right-0', 'border-l');
-                            sidebar.classList.add('left-0', 'border-r');
-                        }
-                    }
-
-                    // Mirror Main Content Margin
-                    const main = document.querySelector('main');
-                    if (main) {
-                        if (isRtl) {
-                            main.classList.remove('lg:ml-72');
-                            main.classList.add('lg:mr-72');
-                        } else {
-                            main.classList.remove('lg:mr-72');
-                            main.classList.add('lg:ml-72');
-                        }
-                    }
-                }, 50); // Small delay to let main.js handle the dir attribute first
-            });
+            // main.js already handles the dir attribute toggle
+            // We can add any dashboard-specific RTL logic here if needed
         }
     </script>
 </body>
