@@ -16,11 +16,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<body class="bg-slate-50 dark:bg-darkBg min-h-screen flex flex-col items-center justify-center p-4 relative">
+<body class="bg-slate-50 dark:bg-darkBg min-h-screen flex flex-col">
 
-    <!-- Utility Toggles Area -->
-    <div class="fixed top-4 right-4 sm:top-8 sm:right-8 rtl:right-auto rtl:left-4 sm:rtl:left-8 z-50">
-        <div class="nav-utilities">
+    <!-- Top Navigation / Utilities Area -->
+    <nav class="w-full p-4 sm:p-6 lg:p-8 flex justify-end items-center z-50">
+        <div class="nav-utilities bg-white/10 dark:bg-black/10 backdrop-blur-md p-1.5 rounded-2xl border border-white/20 shadow-xl">
             <button id="themeToggle" class="utility-btn" title="Toggle Theme">
                 <i class="fas fa-moon"></i>
             </button>
@@ -28,9 +28,11 @@
                 RTL
             </button>
         </div>
-    </div>
+    </nav>
 
-    <div class="w-full max-w-md reveal">
+    <!-- Main Content Area -->
+    <main class="flex-grow flex items-center justify-center p-4 pb-12 sm:pb-20">
+        <div class="w-full max-w-md reveal">
         <div class="glass-card p-8 md:p-12 rounded-[2.5rem] shadow-2xl border border-white/20">
             <!-- Header Inside Card -->
             <div class="flex flex-col items-center text-center mb-10">
@@ -89,7 +91,7 @@
                 <p class="text-sm text-slate-500 dark:text-slate-400">Don't have an account? <a href="signup.html" class="text-primary font-bold hover:underline">Sign Up Free</a></p>
             </div>
         </div>
-    </div>
+    </main>
 
     <script src="../assets/js/main.js"></script>
 </body>

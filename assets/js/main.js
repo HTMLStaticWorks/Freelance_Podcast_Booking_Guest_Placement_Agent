@@ -127,21 +127,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Active Link Highlighting (Global)
-    const currentPath = window.location.pathname;
-    const navLinks = document.querySelectorAll('nav a:not(.group)');
+    const currentUrl = window.location.href.split('#')[0].split('?')[0];
+    const navLinks = document.querySelectorAll('nav a:not(.group), #mobileMenu a, #sidebar a');
+    
     navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        // Handle cases where the link might be relative or absolute
-        if (href && (currentPath.endsWith(href) || (currentPath === '/' && href === 'index.html'))) {
+        if (link.href === currentUrl || (currentUrl.endsWith('/') && link.href.endsWith('index.html'))) {
             link.classList.add('active');
-            // If it's a sidebar link, also style its parent/container if needed
+            
+            // Dashboard Sidebar specific highlighting (kept for dashboard consistency)
             if (link.closest('#sidebar')) {
                 link.classList.add('bg-primary', 'text-white');
                 link.classList.remove('text-slate-500');
             }
         }
     });
-
     // Back to Top Logic
     const backToTop = document.getElementById('backToTop');
     if (backToTop) {

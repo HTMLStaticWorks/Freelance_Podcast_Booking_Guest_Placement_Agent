@@ -137,14 +137,14 @@ button, .btn, a[class*="bg-"], a.glass-card {
 }
 
 /* Primary Button Hover */
-a[class*="bg-primary"]:hover, button[class*="bg-primary"]:hover {
+a.bg-primary:hover, button.bg-primary:hover, a[class*="bg-primary"]:hover, button[class*="bg-primary"]:hover {
     background-color: var(--primary-soft) !important;
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3) !important;
 }
 
 /* Secondary Button Hover */
-a[class*="bg-secondary"]:hover, button[class*="bg-secondary"]:hover {
+a.bg-secondary:hover, button.bg-secondary:hover, a[class*="bg-secondary"]:hover, button[class*="bg-secondary"]:hover {
     background-color: var(--accent) !important;
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 10px 20px rgba(236, 72, 153, 0.3) !important;
@@ -199,44 +199,44 @@ a.glass-card:hover {
 }
 
 .utility-btn {
-    height: 38px;
+    height: 42px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
-    border-radius: 12px; /* Soft square/pill mix */
+    border-radius: 14px;
     font-weight: 700;
     font-size: 0.75rem;
-    padding: 0 12px;
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0 14px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     color: #475569;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
 }
 
 .dark .utility-btn {
-    background: rgba(30, 41, 59, 0.4);
+    background: rgba(30, 41, 59, 0.6);
     border-color: rgba(255, 255, 255, 0.1);
     color: #f8fafc;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 .utility-btn:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.05);
     background: #ffffff !important;
     border-color: var(--primary) !important;
     color: var(--primary) !important;
-    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.1);
+    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.2);
 }
 
 .dark .utility-btn:hover {
     background: var(--primary) !important;
     border-color: var(--primary) !important;
     color: #ffffff !important;
-    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.5);
 }
 
 #themeToggle {
@@ -295,6 +295,27 @@ nav a.active::after {
 
 .dark nav a.active::after {
     background-color: var(--primary-soft);
+}
+
+/* Mobile Menu Active State */
+#mobileMenu a {
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+#mobileMenu a.active {
+    background-color: rgba(139, 92, 246, 0.1);
+    color: var(--primary) !important;
+    border-left-color: var(--primary);
+    font-weight: 700;
+}
+
+.dark #mobileMenu a.active {
+    background-color: rgba(139, 92, 246, 0.2);
+    color: var(--primary-soft) !important;
+    border-left-color: var(--primary-soft);
 }
 
 /* Remove dot from brand logo */
@@ -362,7 +383,7 @@ nav a.group::after, footer a.group::after {
 }
 
 /* Sidebar Active State */
-.dark .sidebar-link.active, .dark [class*="bg-primary"], .dark nav a.active.bg-primary {
+.dark .sidebar-link.active, .dark .bg-primary, .dark nav a.active.bg-primary {
     background-color: var(--primary) !important;
     color: white !important;
 }
